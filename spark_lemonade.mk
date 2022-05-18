@@ -22,16 +22,23 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/oneplus/lemonade/device.mk)
 
 # Inherit some common Nameless-AOSP stuff.
-$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+$(call inherit-product, vendor/spark/config/common_full_phone.mk)
 
 # Boot Animation
 TARGET_BOOT_ANIMATION_RES := 1080
 
+TARGET_FACE_UNLOCK_SUPPORTED := true
+TARGET_USES_BLUR := true
+#TARGET_BUILD_LAWNCHAIR := true
+TARGET_SUPPORTS_QUICK_TAP := true
+TARGET_GAPPS_ARCH := arm64
+WITH_GAPPS := true
+
 # Official
-CUSTOM_BUILD_TYPE := Official
+#CUSTOM_BUILD_TYPE := Official
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := aosp_lemonade
+PRODUCT_NAME := spark_lemonade
 PRODUCT_DEVICE := lemonade
 PRODUCT_MANUFACTURER := OnePlus
 PRODUCT_BRAND := OnePlus
